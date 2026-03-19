@@ -7,6 +7,7 @@ Um app que serve tanto de loja quanto de portfólio para os artistas e artesãos
 ## :technologist: Membros da equipe
 
 Luana Lopes de Amorim - 552990 - CC
+
 Talles Andre Lopes Lima - 558788 - CC
 
 ## :bulb: Objetivo Geral
