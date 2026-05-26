@@ -26,9 +26,9 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
 - Tela com os produtos de cada especialidade.
 - Tela com a bio dos artesãos
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
-- Tela de "Minha Conta"
-
----
+  
+## :iphone: Telas:
+  - Tela Inicial: [Home - ArteToca](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt)
 
 > [!WARNING]
 > Daqui em diante o README.md só deve ser preenchido no momento da entrega final.
