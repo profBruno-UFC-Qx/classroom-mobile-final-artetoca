@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.lazy.LazyColumn
 import com.example.artetoca.ui.theme.ArtetocaTheme
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.items
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -105,8 +106,22 @@ fun PaginaInicial( modifier: Modifier = Modifier) {
                     )
                 }
 
-
+            items(categorias.chunked(2)) { linha ->
+                Row(
+                    Modifier.fillMaxWidth()
+                ) {
+                    linha.forEach { categoria ->
+                        CategoriaVendas(
+                            nome = categoria.nome,
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(6.dp)
+                        )
+                    }
+                }
+            }
         }
+
     }
 
 }
