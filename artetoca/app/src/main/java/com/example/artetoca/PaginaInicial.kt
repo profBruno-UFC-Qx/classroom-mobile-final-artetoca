@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -72,20 +73,37 @@ fun PaginaInicial(modifier: Modifier = Modifier) {
 
         LazyColumn(
             modifier = Modifier
-                .fillMaxSize()
-                .background(Rosa)
-                .padding(horizontal = 24.dp)
-        ) {
+                    .fillMaxSize()
+                    .background(Rosa)
+                    .padding(horizontal = 24.dp)
+            ) {
             item {
 
-                Text(
-                    text = "Explore nossas categorias",
-                    fontSize = 18.sp,
-                    color = Color.Black,
-                    modifier = Modifier.padding(24.dp)
+                    Text(
+                        text = "Explore nossas categorias",
+                        fontSize = 18.sp,
+                        color = Color.Black,
+                        modifier = Modifier.padding(24.dp)
 
-                )
+                    )
+                }
+
+            items(categorias.chunked(2)) { linha ->
+                Row(
+                    Modifier.fillMaxWidth()
+                ) {
+                    linha.forEach { categoria ->
+                        CategoriaVendas(
+                            nome = categoria.nome,
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(6.dp)
+                        )
+                    }
+                }
             }
         }
+
     }
+
 }
