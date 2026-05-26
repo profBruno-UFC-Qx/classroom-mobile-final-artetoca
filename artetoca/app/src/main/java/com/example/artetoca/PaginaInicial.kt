@@ -30,17 +30,6 @@ import com.example.artetoca.ui.theme.ArtetocaTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.items
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            ArtetocaTheme {
-                PaginaInicial()
-            }
-        }
-    }
-}
 
 @Composable
 fun PaginaInicial( modifier: Modifier = Modifier) {
