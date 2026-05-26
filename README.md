@@ -23,7 +23,6 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
 
 - Tela inicial com imagens do tipo de arte comercializada (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos.
 - Tela sobre a Associação. 
-- Tela com os produtos de cada especialidade.
 - Tela com a bio dos artesãos
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
   
