@@ -22,9 +22,13 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
 - Tela inicial com as categorias de arte comercializadas (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos/procurados.
-- Tela sobre a Associação. 
+  Responsável: Luana
+- Tela sobre a Associação.
+  Responsável: Luana 
 - Tela com a bio dos artesãos
+  Responsável: Talles
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
+  Responsável: Talles
   
 ## :iphone: Telas:
   - Tela Inicial: [Home - ArteToca](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt)
