@@ -21,7 +21,7 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-- Tela inicial com imagens do tipo de arte comercializada (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos.
+- Tela inicial com as categorias de arte comercializadas (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos/procurados.
 - Tela sobre a Associação. 
 - Tela com a bio dos artesãos
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
