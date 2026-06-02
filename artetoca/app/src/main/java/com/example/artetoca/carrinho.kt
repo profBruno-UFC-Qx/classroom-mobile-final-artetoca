@@ -20,6 +20,7 @@ import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -30,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -121,6 +123,29 @@ fun ItemCard(preco: Float, qtd: Int, modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun FinalizerCard(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .background(Color.White, shape = MaterialTheme.shapes.medium)
+            .padding(16.dp)
+        , verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            Text("Preço:")
+            Text("R$ 100,00")
+        }
+        TextButton(
+            onClick = {},
+            modifier = modifier
+                .fillMaxWidth()
+                .background(Color.Green, shape = MaterialTheme.shapes.medium)
+        ) {
+            Text("Finalizar pedido")
+        }
+        Text(text = "Você será redirecionado para o WhatsApp para concluir seu pedido", textAlign = TextAlign.Center)
+    }
+}
 
 @Composable
 fun CardListMock() {
@@ -134,6 +159,7 @@ fun CardListMock() {
         repeat(10) {
             ItemCard(300f, 1)
         }
+        FinalizerCard()
     }
 }
 
