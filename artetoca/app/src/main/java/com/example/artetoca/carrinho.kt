@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ItemCard(preco:Float,qtd:Int,modifier: Modifier = Modifier) {
+fun ItemCard(preco: Float, qtd: Int, modifier: Modifier = Modifier) {
     var valor by remember { mutableIntStateOf(qtd) }
     Row(
         modifier = modifier
@@ -74,7 +74,13 @@ fun ItemCard(preco:Float,qtd:Int,modifier: Modifier = Modifier) {
                             Color(0xfffce4e9),
                             Color(0xfffce4e9)
                         )
-                    ) { Text("-") }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.remove),
+                            contentDescription = "Remover item",
+                            tint = Color.Black
+                        )
+                    }
 
                     Text(
                         text = "$valor",
@@ -87,21 +93,27 @@ fun ItemCard(preco:Float,qtd:Int,modifier: Modifier = Modifier) {
                         border = BorderStroke(1.dp, Color.Transparent),
                         colors = IconButtonColors(
                             Color(0xfffce4e9),
-                            Color(0xff000000),
+                            Color.Black,
                             Color(0xfffce4e9),
                             Color(0xfffce4e9)
                         )
-                    ) { Text("+") }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.add),
+                            tint = Color.Black,
+                            contentDescription = "Remover item"
+                        )
+                    }
                 }
-                Text("R$ ${preco}")
+                Text("R$ $preco")
                 IconButton(
                     onClick = {},
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.trash),
-                        contentDescription = "Remover item",
                         modifier = Modifier.size(24.dp),
-                        tint = Color(0xffd4183d)
+                        tint = Color(0xffd4183d),
+                        contentDescription = "Remover item"
                     )
                 }
             }
@@ -120,7 +132,7 @@ fun CardListMock() {
             .verticalScroll(scrollState), verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         repeat(10) {
-            ItemCard(300f,1)
+            ItemCard(300f, 1)
         }
     }
 }
