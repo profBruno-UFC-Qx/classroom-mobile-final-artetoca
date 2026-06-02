@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Banner(modifier: Modifier) {
+fun Banner(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxWidth()
