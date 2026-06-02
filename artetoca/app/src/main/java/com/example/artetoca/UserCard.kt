@@ -67,6 +67,7 @@ fun UserCard(
 @Composable
 fun CardMock(modifier: Modifier = Modifier) {
     Column(modifier) {
+
         cards.forEach {
             UserCard(it.first, it.second, it.third)
         }
