@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -34,16 +35,19 @@ fun UserCard(
     descrição: String,
     modifier: Modifier = Modifier
 ) {
-    Card (
+    Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(16.dp)
-//            .clip(RoundedCornerShape(16.dp))
-            .background(Color.White)
+            .padding(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        )
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
-            modifier = Modifier.padding(10.dp)
+            modifier = Modifier
+                .padding(10.dp)
+                .background(Color.White)
         ) {
             AsyncImage(
                 model = "https://img.icons8.com/3d-fluent/100/user-2.png",
@@ -61,8 +65,9 @@ fun UserCard(
 }
 
 @Composable
-fun CardMock() {
-    Column(Modifier.background(color = Color(0xfffef5f5))) {
+fun CardMock(modifier: Modifier = Modifier) {
+    Column(modifier) {
+
         cards.forEach {
             UserCard(it.first, it.second, it.third)
         }
