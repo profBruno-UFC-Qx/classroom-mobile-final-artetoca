@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FinalizerCard(valorTotal: Float, modifier: Modifier = Modifier) {
+fun FinalizerCard(valorTotal:Float, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .background(Color.White, shape = MaterialTheme.shapes.medium)
@@ -31,9 +31,9 @@ fun FinalizerCard(valorTotal: Float, modifier: Modifier = Modifier) {
             onClick = {},
             modifier = modifier
                 .fillMaxWidth()
-                .background(Color(0xff00c850), shape = MaterialTheme.shapes.medium)
+                .background(Color.Green, shape = MaterialTheme.shapes.medium)
         ) {
-            Text(text = "Finalizar pedido", color = Color.White)
+            Text("Finalizar pedido")
         }
         Text(
             text = "Você será redirecionado para o WhatsApp para concluir seu pedido",
