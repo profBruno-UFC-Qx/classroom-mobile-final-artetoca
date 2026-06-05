@@ -7,17 +7,18 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import java.util.UUID
 
 @Composable
-fun ItemList(items:List<ItemCardData>, modifier: Modifier = Modifier) {
+fun ItemList(items:List<ItemCardData>, removeItem: (UUID) -> Unit, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
             .verticalScroll(scrollState),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items.forEach {
-            ItemCard(it.img, it.preco.toFloat(), it.qtd)
+        items.forEach { item ->
+            ItemCard(item,removeItem)
         }
     }
 }
