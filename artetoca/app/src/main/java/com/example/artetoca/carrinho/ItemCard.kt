@@ -20,10 +20,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,10 +34,10 @@ import java.util.UUID
 @Composable
 fun ItemCard(
     item: ItemCardData,
+    count: Int,
     removeItem: (UUID) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var count by remember { mutableIntStateOf(item.qtd) }
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -72,9 +68,9 @@ fun ItemCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 ItemCounter(count, {
-                    count--
-                    if (count < 1) removeItem(item.id)
-                }, { count++ })
+//                    count--
+//                    if (count < 1) removeItem(item.id)
+                }, {})
                 Spacer(modifier = Modifier.weight(1f))
                 Text("R$ ${item.preco * count}")
                 IconButton(

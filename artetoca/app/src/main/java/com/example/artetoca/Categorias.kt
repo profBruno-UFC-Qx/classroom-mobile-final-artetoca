@@ -2,6 +2,7 @@ package com.example.artetoca
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
@@ -31,7 +32,8 @@ val categorias = listOf(
 @Composable
 fun CategoriaVendas(
     nome: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
 ) {
     Column(
         modifier = modifier
@@ -42,7 +44,8 @@ fun CategoriaVendas(
                 width = 1.dp,
                 color = Color.Transparent,
                 shape = RoundedCornerShape(10.dp)
-            ),
+            )
+            .clickable { onClick() },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

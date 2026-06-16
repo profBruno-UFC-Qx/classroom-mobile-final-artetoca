@@ -26,7 +26,7 @@ fun FinalCard(modifier: Modifier = Modifier) {
             .padding(16.dp)
             .fillMaxSize()
             .height(150.dp)
-            .background(Color(0xE1FDD7E0), shape = MaterialTheme.shapes.medium),
+            .background(color = Color(0xE1FDD7E0), shape = MaterialTheme.shapes.medium),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

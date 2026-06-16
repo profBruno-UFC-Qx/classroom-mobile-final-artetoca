@@ -18,7 +18,7 @@ fun ItemList(items:List<ItemCardData>, removeItem: (UUID) -> Unit, modifier: Mod
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items.forEach { item ->
-            ItemCard(item,removeItem)
+            ItemCard(item,1,removeItem)
         }
     }
 }
