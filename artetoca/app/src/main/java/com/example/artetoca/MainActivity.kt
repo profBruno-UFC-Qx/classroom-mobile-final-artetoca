@@ -17,6 +17,8 @@ class MainActivity : ComponentActivity() {
             Scaffold {
                 ArtetocaTheme {
                     PaginaInicial(Modifier.padding(it))
+
+                    //sobre(Modifier.padding(it))
                 }
             }
         }
