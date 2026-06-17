@@ -24,7 +24,7 @@ val categorias = listOf(
     Categoria("Quadros"),
     Categoria("Crochê"),
     Categoria("Macramê"),
-    Categoria("Amigurimi"),
+    Categoria("Palha"),
     Categoria("Papel Machê"),
 )
 
@@ -43,13 +43,13 @@ fun CategoriaVendas(
                 color = Color.Transparent,
                 shape = RoundedCornerShape(10.dp)
             ),
-          horizontalAlignment = Alignment.CenterHorizontally,
-          verticalArrangement = Arrangement.Center
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
-            Text (
-                text = nome,
-                fontSize = 15.sp,
-                color = Color.Black
-            )
+        Text (
+            text = nome,
+            fontSize = 15.sp,
+            color = Color.Black
+        )
     }
 }

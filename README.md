@@ -21,14 +21,18 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-- Tela inicial com imagens do tipo de arte comercializada (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos.
-- Tela sobre a Associação. 
-- Tela com os produtos de cada especialidade.
+- Tela inicial com as categorias de arte comercializadas (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos/procurados.
+   - Responsável: **Luana**
+- Tela sobre a Associação.
+   - Responsável: **Luana** 
 - Tela com a bio dos artesãos
+   - Responsável: **Talles**
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
+   - Responsável: **Talles**
   
 ## :iphone: Telas:
-  - Tela Inicial: [Home - ArteToca](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt)
+  - Tela Inicial (para em breve vincular as páginas): [Home - ArteToca](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt)
+  - Tela Inicial com as Categorias [Home - ArteToca Categorias](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/PaginaInicial.kt)
 
 > [!WARNING]
 > Daqui em diante o README.md só deve ser preenchido no momento da entrega final.
