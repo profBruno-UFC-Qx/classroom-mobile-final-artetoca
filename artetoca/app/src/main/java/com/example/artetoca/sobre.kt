@@ -79,6 +79,16 @@ fun sobre( modifier: Modifier = Modifier) {
         ){
             val image = painterResource(R.drawable.artetoca_grupo)
 
+            Text(
+                text = "Sobre a Artetoca",
+                fontSize = 24.sp,
+                color = RosaTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             Image(
                 painter = image,
                 contentDescription = "Foto com alguns associados da Artetoca na Ceart",
