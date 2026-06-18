@@ -22,6 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.res.stringResource
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
@@ -75,6 +77,19 @@ fun sobre( modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier.padding(horizontal = 24.dp)
         ){
+            val image = painterResource(R.drawable.artetoca_grupo)
+
+            Image(
+                painter = image,
+                contentDescription = "Foto com alguns associados da Artetoca na Ceart",
+                modifier = Modifier
+                    .padding(5.dp)
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(12.dp))
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             Text(
                 text = "Nossa história",
                 fontSize = 24.sp,
@@ -85,11 +100,7 @@ fun sobre( modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "A Artetoca foi fundada em 2024 e nasceu do sonho de unir talentos" +
-                         "e dar visibilidade aos trabalhos dos artesãos e artistas de Ocara, Ceará." +
-                        "Atuamos com diferentes técnicas e linguagens: crochê, barro, bordado, costura criativa, pintura e escultura." +
-                        "Além da produção artística, realizamos oficinas, exposições, feiras culturais e projetos comunitários " +
-                                "que fortalecem a identidade e a economia criativa do nosso município.",
+                text = stringResource(R.string.historia),
                 fontSize = 14.sp,
                 color = Color.Gray,
                 textAlign = TextAlign.Center,
@@ -113,10 +124,7 @@ fun sobre( modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Acreditamos na importância da preservação cultural, na promoção da arte " +
-                        "como meio de desenvolvimento e na geração de renda sustentável para a " +
-                        "comunidade. Cada ação que realizamos é guiada por esses princípios, " +
-                        "que refletem nosso compromisso com o bem-estar social e ambiental ",
+                text = stringResource(R.string.valores),
                 fontSize = 14.sp,
                 color = Color.Gray,
                 textAlign = TextAlign.Center,
