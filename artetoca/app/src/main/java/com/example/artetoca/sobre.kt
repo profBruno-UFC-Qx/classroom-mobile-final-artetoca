@@ -24,6 +24,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
@@ -35,6 +38,7 @@ fun sobre( modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
+           .verticalScroll(rememberScrollState())
     ) {
         Row(
             modifier = Modifier
@@ -82,6 +86,7 @@ fun sobre( modifier: Modifier = Modifier) {
             Text(
                 text = "Sobre a Artetoca",
                 fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
                 color = RosaTitulo,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
@@ -103,18 +108,20 @@ fun sobre( modifier: Modifier = Modifier) {
             Text(
                 text = "Nossa história",
                 fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
                 color = RosaTitulo,
-                textAlign = TextAlign.Left
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = stringResource(R.string.historia),
-                fontSize = 14.sp,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
                 color = Color.Gray,
-                textAlign = TextAlign.Center,
-
+                textAlign = TextAlign.Justify,
                 modifier = Modifier.fillMaxWidth()
 
             )
@@ -127,21 +134,23 @@ fun sobre( modifier: Modifier = Modifier) {
             Text(
                 text = "Nossos Valores",
                 fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
                 color = RosaTitulo,
-                textAlign = TextAlign.Left
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = stringResource(R.string.valores),
-                fontSize = 14.sp,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
                 color = Color.Gray,
-                textAlign = TextAlign.Center,
-
+                textAlign = TextAlign.Justify,
                 modifier = Modifier.fillMaxWidth()
-
             )
+            Spacer(modifier = Modifier.height(16.dp))
         }
 
     }
