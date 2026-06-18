@@ -34,8 +34,9 @@ import java.util.UUID
 @Composable
 fun ItemCard(
     item: ItemCardData,
-    count: Int,
     removeItem: (UUID) -> Unit,
+    incrementItem: (UUID, Int) -> Unit,
+    decrementItem: (UUID, Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -67,12 +68,12 @@ fun ItemCard(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                ItemCounter(count, {
-//                    count--
-//                    if (count < 1) removeItem(item.id)
-                }, {})
+                ItemCounter(
+                    item.qtd,
+                    { decrementItem(item.id, item.qtd) },
+                    { incrementItem(item.id, item.qtd) })
                 Spacer(modifier = Modifier.weight(1f))
-                Text("R$ ${item.preco * count}")
+                Text("R$ ${item.preco * item.qtd}")
                 IconButton(
                     onClick = { removeItem(item.id) },
                 ) {

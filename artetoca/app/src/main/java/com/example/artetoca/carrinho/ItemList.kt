@@ -10,7 +10,12 @@ import androidx.compose.ui.unit.dp
 import java.util.UUID
 
 @Composable
-fun ItemList(items:List<ItemCardData>, removeItem: (UUID) -> Unit, modifier: Modifier = Modifier) {
+fun ItemList(
+    items: List<ItemCardData>,
+    removeItem: (UUID) -> Unit,
+    incrementItem: (UUID, Int) -> Unit,
+    decrementItem: (UUID, Int) -> Unit, modifier: Modifier = Modifier
+) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
@@ -18,7 +23,7 @@ fun ItemList(items:List<ItemCardData>, removeItem: (UUID) -> Unit, modifier: Mod
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items.forEach { item ->
-            ItemCard(item,1,removeItem)
+            ItemCard(item, removeItem, incrementItem, decrementItem)
         }
     }
 }
