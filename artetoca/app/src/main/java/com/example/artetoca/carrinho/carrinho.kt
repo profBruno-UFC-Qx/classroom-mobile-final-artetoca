@@ -69,7 +69,7 @@ fun Carrinho(modifier: Modifier = Modifier) {
         }
         Column(
             modifier = modifier
-                .background(Color(0xFFFFD0D0))
+                .background(Color(0xFFFFE6E6))
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
