@@ -61,6 +61,7 @@ fun PaginaInicial( modifier: Modifier = Modifier) {
                 Text(
                     text = "Artetoca",
                     fontSize = 24.sp,
+                    fontWeight = FontWeight.Light,
                     color = RosaTitulo,
                     textAlign = TextAlign.Left,
                     modifier = Modifier.fillMaxWidth()
@@ -69,6 +70,7 @@ fun PaginaInicial( modifier: Modifier = Modifier) {
                 Text(
                     text = "Arte feita com amor",
                     fontSize = 14.sp,
+                    fontWeight = FontWeight.Light,
                     color = Color.Gray,
                     textAlign = TextAlign.Left,
                     modifier = Modifier.fillMaxWidth()

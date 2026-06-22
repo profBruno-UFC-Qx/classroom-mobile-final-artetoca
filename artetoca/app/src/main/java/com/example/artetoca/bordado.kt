@@ -105,8 +105,6 @@ fun CardProdutoBordado(produto: Produto) {
     }
 }
 
-
-
 @Composable
 fun bordado( modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.artetoca)
@@ -138,6 +136,7 @@ fun bordado( modifier: Modifier = Modifier) {
                 Text(
                     text = "Artetoca",
                     fontSize = 24.sp,
+                    fontWeight = FontWeight.Light,
                     color = RosaTitulo,
                     textAlign = TextAlign.Left,
                     modifier = Modifier.fillMaxWidth()
@@ -146,6 +145,7 @@ fun bordado( modifier: Modifier = Modifier) {
                 Text(
                     text = "Arte feita com amor",
                     fontSize = 14.sp,
+                    fontWeight = FontWeight.Light,
                     color = Color.Gray,
                     textAlign = TextAlign.Left,
                     modifier = Modifier.fillMaxWidth()
