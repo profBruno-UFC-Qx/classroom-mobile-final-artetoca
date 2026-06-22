@@ -32,33 +32,8 @@ import androidx.compose.material3.Card
 import androidx.compose.ui.text.font.FontWeight
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
-
-data class Produto(
-    val nome: String,
-    val preco: String,
-    val imagem: Int
-)
-
-val produtos = listOf(
-    Produto(
-        "Bordado Nome",
-        "70,00",
-        R.drawable.bordado1
-    ),
-    Produto(
-        "Bordado de Santo",
-        "70,00",
-        R.drawable.bordado2
-    ),
-    Produto(
-        "Bordado de Santo",
-        "70,00",
-        R.drawable.bordado3
-    )
-)
-
 @Composable
-fun CardProduto(produto: Produto) {
+fun CardProdutoBordado(produto: Produto) {
     val Rosa = Color(0xFFE88BA0)
     val RosaClaro = Color(0xFFF9E7EA)
 
@@ -180,8 +155,8 @@ fun bordado( modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-      produtos.forEach { produto ->
-          CardProduto(produto = produto)
+      bordados.forEach { produto ->
+          CardProdutoBordado(produto = produto)
       }
     }
 }
