@@ -17,3 +17,9 @@ val croches = listOf(
     Produto("Protetor de Galão", "60,00", R.drawable.croche2),
     Produto("Bolsa", "60,00", R.drawable.croche3)
 )
+
+val pinturas = listOf(
+    Produto("Quadro Praia", "60,00", R.drawable.quadro1),
+    Produto("Quadro Casal", "60,00", R.drawable.quadro2),
+    Produto("Quadro Pôr do Sol", "60,00", R.drawable.quadro3)
+)
