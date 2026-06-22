@@ -95,10 +95,7 @@ fun CardProdutoCroche(produto: Produto) {
                 ),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Text(
-                    text = "🛒",
-                    fontSize = 24.sp
-                )
+               
                 Spacer(modifier = Modifier.width(6.dp))
 
                 Text("Comprar")
