@@ -40,7 +40,8 @@ fun CardProdutoCroche(produto: Produto) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp),
+            .padding(horizontal = 12.dp,
+                    vertical = 8.dp ),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
