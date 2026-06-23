@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.artesoes
 
 data class UserData(
     val nome: String,
