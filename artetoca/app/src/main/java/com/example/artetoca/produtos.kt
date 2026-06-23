@@ -23,3 +23,8 @@ val pinturas = listOf(
     Produto("Quadro Casal", "60,00", R.drawable.quadro2),
     Produto("Quadro Pôr do Sol", "60,00", R.drawable.quadro3)
 )
+val palhas = listOf(
+    Produto("Bolsa", "60,00", R.drawable.palha1),
+    Produto("Porta prato", "40,00", R.drawable.palha2),
+    Produto("Cesto", "40,00", R.drawable.palha3)
+)
