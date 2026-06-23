@@ -34,3 +34,9 @@ val macrame = listOf(
     Produto("Suporte", "40,00", R.drawable.macrame2),
     Produto("Vestuário", "120,00", R.drawable.macrame3)
 )
+
+val papel = listOf(
+    Produto("Galo", "40,00", R.drawable.papel1),
+    Produto("Galo", "40,00", R.drawable.papel2),
+    Produto("Pássaro", "40,00", R.drawable.papel3)
+)
