@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -25,7 +26,7 @@ val categorias = listOf(
     Categoria("Quadros"),
     Categoria("Crochê"),
     Categoria("Macramê"),
-    Categoria("Amigurimi"),
+    Categoria("Palha"),
     Categoria("Papel Machê"),
 )
 
@@ -35,6 +36,9 @@ fun CategoriaVendas(
     modifier: Modifier = Modifier,
     onClick: () -> Unit = {}
 ) {
+    val Rosa = Color(0xFFFEF5F5)
+    val RosaEscuro = Color(0xFFFF5E81)
+
     Column(
         modifier = modifier
             .height(100.dp)
@@ -52,7 +56,8 @@ fun CategoriaVendas(
         Text (
             text = nome,
             fontSize = 15.sp,
-            color = Color.Black
+            fontWeight = FontWeight.Light,
+            color = RosaEscuro
         )
     }
 }

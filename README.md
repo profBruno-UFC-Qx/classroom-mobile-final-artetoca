@@ -14,14 +14,14 @@ Talles Andre Lopes Lima - 558788 - CC
 O app consiste em uma loja/portfólio a fim de tornar mais acessível, tanto para os clientes quanto para os artesãos, o processo de comprar uma peça artística. Será possível pesquisar os artesanatos com base no tipo de cada especialidade, exemplo: macramê. Ao clicar em macramê, irá mostrar todos os produtos prontos para entrega ou para encomendar. Ao clicar no produto, mostrará o artesão que fez e será possível clicar nele para obter mais informações. Também terá uma tela para listar todos os artesãos associados. Ao clicar no artesão, serão mostrados todos os seus produtos. E, por fim, a tela de carrinho ou redirecionamento para o WhatsApp ao clicar em “comprar” em algum produto.
 
 ## :eyes: Público-Alvo
-Pessoas interessadas em comprar artesanato (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc). Artesãos associados à ArteToca.
+Pessoas interessadas em comprar artesanato (bordado, quadros, crochê, macramê, artesanato de palha, esculturas de papel machê, etc). Artesãos associados à ArteToca.
 
 ## :star2: Impacto Esperado
 Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm ensino superior, além de pouco letramento digital, e usam a arte como uma forma de aumentar um pouco a renda, o app permitiria que essas pessoas tivessem mais comodidade para vender seus produtos, sem necessitar ter que usar o Instagram como única forma de vender ou expor seus produtos digitalmente. O app também irá trazer mais credibilidade à associação e, possivelmente, angariar mais artistas para se associarem, bem como aumentar o capital financeiro da associação para, talvez, locar um espaço na cidade. O app também irá tornar mais fácil para o cliente buscar o tipo de arte que lhe interessa, sem necessitar usar uma rede social. E, por fim, fomentar os artesãos e a cultura do município.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-- Tela inicial com as categorias de arte comercializadas (bordado, quadros, crochê, macramê, amigurimi, esculturas de papel machê, etc) e os produtos mais vendidos/procurados.
+- Tela inicial com as categorias de arte comercializadas (bordado, quadros, crochê, macramê, palha, esculturas de papel machê, etc) e os produtos mais vendidos/procurados.
    - Responsável: **Luana**
 - Tela sobre a Associação.
    - Responsável: **Luana** 
@@ -29,6 +29,10 @@ Visto que a maior parte dos artesãos da ArteToca são agricultores e não têm 
    - Responsável: **Talles**
 - Tela com carrinho ou redirecionamento para o Whatsapp ao clicar em "comprar".
    - Responsável: **Talles**
+ - Tela/Nav para exibir os artesnatos de Bordado, Quadros e Crochê:
+   - Responsável: **Luana**
+ - Tela/Nav para exibir os artesnatos de Palha, papel machê e macramê:
+    - Responsável: - Responsável: **Talles**
   
 ## :iphone: Telas:
   - Tela Inicial (para em breve vincular as páginas): [Home - ArteToca](https://github.com/profBruno-UFC-Qx/classroom-mobile-final-artetoca/blob/main/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt)
