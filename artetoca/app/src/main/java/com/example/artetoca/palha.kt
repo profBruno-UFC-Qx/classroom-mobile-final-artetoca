@@ -158,7 +158,7 @@ fun palha( modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(24.dp))
 
         palhas.forEach { produto ->
-            CardProdutoBordado(produto = produto)
+            CardProdutoPalha(produto = produto)
         }
     }
 }
