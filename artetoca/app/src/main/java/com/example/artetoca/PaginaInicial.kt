@@ -31,7 +31,10 @@ import androidx.compose.ui.unit.sp
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
-fun PaginaInicial( modifier: Modifier = Modifier) {
+fun PaginaInicial(
+    modifier: Modifier = Modifier,
+    onCategoriaClick: (String) -> Unit = {}
+) {
     val image = painterResource(R.drawable.artetoca)
     val Rosa = Color(0xFFFEF5F5)
     val RosaTitulo = Color(0xFFE88BA0)
@@ -123,7 +126,8 @@ fun PaginaInicial( modifier: Modifier = Modifier) {
                             nome = categoria.nome,
                             modifier = Modifier
                                 .weight(1f)
-                                .padding(6.dp)
+                                .padding(6.dp),
+                            onClick = { onCategoriaClick(categoria.nome) }
                         )
                     }
                 }

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,10 +20,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -32,16 +29,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.artetoca.R
+import java.util.UUID
 
 @Composable
 fun ItemCard(
-    img: Int,
-    preco: Float,
-    qtd: Int,
+    item: ItemCardData,
+    removeItem: (UUID) -> Unit,
+    incrementItem: (UUID, Int) -> Unit,
+    decrementItem: (UUID, Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var count by remember { mutableIntStateOf(qtd) }
-//    val (onRemove, onAdd, onRemoveItem) = {};
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -51,7 +48,7 @@ fun ItemCard(
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Image(
-            painter = painterResource(id = img),
+            painter = painterResource(id = item.img),
             contentDescription = null,
             modifier = Modifier
                 .size(80.dp)
@@ -71,13 +68,14 @@ fun ItemCard(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                ItemCounter(count,{count--},{count++})
-
-//                Spacer(modifier = Modifier.weight(1f))
-
-                Text("R$ $preco")
+                ItemCounter(
+                    item.qtd,
+                    { decrementItem(item.id, item.qtd) },
+                    { incrementItem(item.id, item.qtd) })
+                Spacer(modifier = Modifier.weight(1f))
+                Text("R$ ${item.preco * item.qtd}")
                 IconButton(
-                    onClick = {},
+                    onClick = { removeItem(item.id) },
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.trash),
@@ -93,7 +91,7 @@ fun ItemCard(
 
 @Composable
 fun ItemCounter(
-    count:Int,
+    count: Int,
     removeItem: () -> Unit,
     addItem: () -> Unit,
     modifier: Modifier = Modifier
