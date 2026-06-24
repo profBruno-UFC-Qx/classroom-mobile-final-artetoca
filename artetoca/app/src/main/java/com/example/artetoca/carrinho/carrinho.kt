@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,9 +29,9 @@ fun Carrinho(modifier: Modifier = Modifier) {
 
     val viewModel: CarrinhoViewModel = viewModel()
 
-    Column {
+    Column(modifier = modifier.fillMaxSize()) {
         Row(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(80.dp)
                 .background(Color.White)
@@ -48,7 +50,8 @@ fun Carrinho(modifier: Modifier = Modifier) {
             )
         }
         Column(
-            modifier = modifier
+            modifier = Modifier
+                .fillMaxHeight()
                 .background(Color(0xFFFFE6E6))
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
