@@ -100,7 +100,8 @@ fun ArtetocaApp() {
                     }
                 }
             )
-//            1 -> Artesoes(modifier = Modifier.padding(innerPadding))
+
+            1 -> sobre(modifier = Modifier.padding(innerPadding))
             2 -> Artesoes(modifier = Modifier.padding(innerPadding))
             3 -> Carrinho(modifier = Modifier.padding(innerPadding))
         }
