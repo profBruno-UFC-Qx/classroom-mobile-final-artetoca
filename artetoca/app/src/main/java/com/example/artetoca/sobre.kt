@@ -81,7 +81,8 @@ fun sobre( modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(24.dp))
 
         Column(
-            modifier = Modifier.padding(horizontal = 24.dp)
+             modifier = Modifier.background(Rosa)
+                                .padding(horizontal = 24.dp)
         ){
             val image = painterResource(R.drawable.artetoca_grupo)
 
