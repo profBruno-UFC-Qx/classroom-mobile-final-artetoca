@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640811250767",
+    "project_id": "learnig-firebase-535ad",
+    "storage_bucket": "learnig-firebase-535ad.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640811250767:android:b3e872726610e6157ae63a",
+        "android_client_info": {
+          "package_name": "com.example.artetoca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm_PeNaFNl6TIDlxPo94gUJj-kkaEZtb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
