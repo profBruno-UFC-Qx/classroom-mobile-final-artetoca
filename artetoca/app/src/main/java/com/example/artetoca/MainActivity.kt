@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.carrinho.Carrinho
 import com.example.artetoca.ui.theme.ArtetocaTheme
 import kotlinx.coroutines.launch
@@ -64,7 +65,7 @@ fun ArtetocaApp() {
                         onClick = { selectedTab = index },
                         icon = {
                             Icon(
-                                modifier = Modifier.size(24.dp),
+                                modifier = Modifier.size(20.dp),
                                 painter = painterResource(id = icon),
                                 contentDescription = label
                             )
