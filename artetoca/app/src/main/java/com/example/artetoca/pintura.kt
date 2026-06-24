@@ -158,7 +158,7 @@ fun pintura( modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(24.dp))
 
         pinturas.forEach { produto ->
-            CardProdutoBordado(produto = produto)
+            CardProdutoPintura(produto = produto)
         }
     }
 }
