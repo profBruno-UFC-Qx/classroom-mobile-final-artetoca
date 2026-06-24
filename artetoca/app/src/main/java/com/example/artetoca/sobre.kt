@@ -132,7 +132,8 @@ fun sobre( modifier: Modifier = Modifier) {
         }
 
         Column(
-            modifier = Modifier.padding(horizontal = 24.dp)
+             modifier = Modifier.background(Rosa)
+                .padding(horizontal = 24.dp)
         ){
             Text(
                 text = "Nossos Valores",
