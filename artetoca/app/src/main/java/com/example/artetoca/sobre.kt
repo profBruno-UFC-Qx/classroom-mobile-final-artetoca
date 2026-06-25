@@ -78,10 +78,11 @@ fun sobre( modifier: Modifier = Modifier) {
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        //Spacer(modifier = Modifier.height(24.dp))
 
         Column(
              modifier = Modifier.background(Rosa)
+                 .padding(horizontal = 24.dp, vertical = 24.dp)
         ){
             val image = painterResource(R.drawable.artetoca_grupo)
 
@@ -92,7 +93,7 @@ fun sobre( modifier: Modifier = Modifier) {
                 color = RosaTitulo,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
-                                .padding(24.dp)
+                                .padding(horizontal = 12.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))

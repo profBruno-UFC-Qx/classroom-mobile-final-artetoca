@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.InternalFoundationApi
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -39,6 +40,7 @@ import com.example.artetoca.Screen.Palha
 import com.example.artetoca.Screen.Papel
 import com.example.artetoca.Screen.Pintura
 import com.example.artetoca.artesoes.Artesoes
+import com.example.artetoca.Screen.Sobre
 import com.example.artetoca.carrinho.Carrinho
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
@@ -56,7 +58,7 @@ class MainActivity : ComponentActivity() {
 
 val navItems = listOf(
     Pair("Home", drawable.home_icon),
-    Pair("Info", drawable.info_circle),
+    Pair("Sobre", drawable.info_circle),
     Pair("Artesoes", drawable.people),
     Pair("Cart", drawable.shopping_cart)
 )
@@ -78,6 +80,7 @@ fun ArtetocaApp() {
                             selectedTab = index
                             when (index) {
                                 0 -> backStack.add(Home)
+                                1 -> backStack.add(Sobre)
                                 2 -> backStack.add(Artesoes)
                                 3 -> backStack.add(Carrinho)
                             }
@@ -130,6 +133,7 @@ fun ArtetocaApp() {
                 entry<Papel>(metadata = ListDetailSceneStrategy.detailPane()) { papel() }
                 entry<Palha>(metadata = ListDetailSceneStrategy.detailPane()) { palha() }
                 entry<Macrame>(metadata = ListDetailSceneStrategy.detailPane()) { macrame() }
+                entry<Sobre> { sobre() }
                 entry<Artesoes> { Artesoes() }
                 entry<Carrinho> { Carrinho() }
             }

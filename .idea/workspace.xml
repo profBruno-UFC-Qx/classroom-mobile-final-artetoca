@@ -12,12 +12,9 @@
     <list default="true" id="96961079-2b9b-4b88-8adc-1a57f4260397" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/artetoca.app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/bordado.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/bordado.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/croche.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/croche.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/macrame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/macrame.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/palha.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/palha.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/papel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/papel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/pintura.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/pintura.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Screen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/sobre.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/sobre.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
