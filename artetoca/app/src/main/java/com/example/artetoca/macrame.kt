@@ -157,7 +157,7 @@ fun macrame( modifier: Modifier = Modifier) {
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+       // Spacer(modifier = Modifier.height(24.dp))
 
         macrame.forEach { produto ->
             CardProdutoMacrame(produto = produto)

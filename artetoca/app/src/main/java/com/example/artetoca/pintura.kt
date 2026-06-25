@@ -157,7 +157,7 @@ fun pintura( modifier: Modifier = Modifier) {
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        //Spacer(modifier = Modifier.height(24.dp))
 
         pinturas.forEach { produto ->
             CardProdutoPintura(produto = produto)

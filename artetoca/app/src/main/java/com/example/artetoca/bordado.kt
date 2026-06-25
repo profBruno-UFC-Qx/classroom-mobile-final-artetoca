@@ -156,7 +156,7 @@ fun bordado( modifier: Modifier = Modifier) {
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        // Spacer(modifier = Modifier.height(24.dp))
 
       bordados.forEach { produto ->
           CardProdutoBordado(produto = produto)
