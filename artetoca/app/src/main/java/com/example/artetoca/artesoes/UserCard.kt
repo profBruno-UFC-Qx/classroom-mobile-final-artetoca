@@ -1,33 +1,28 @@
 package com.example.artetoca.artesoes
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.artetoca.R.drawable
+import coil.compose.AsyncImage
 
 @Composable
 fun UserCard(
     titulo: String,
-    especialidade: String,
     descrição: String,
+    img_url: String,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -44,18 +39,14 @@ fun UserCard(
                 .padding(10.dp)
                 .background(Color.White)
         ) {
-            Box(
-                modifier = Modifier
-                    .size(60.dp)
-                    .background(Color.Gray, shape = CircleShape)
-                    .padding(8.dp)
-            ) {
-                Image(painter = painterResource(id = drawable.artetoca), contentDescription = null)
-            }
+            AsyncImage(
+                model = img_url,
+                contentDescription = null
+            )
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(text = titulo, fontSize = 16.sp, fontWeight = FontWeight.Bold)
-                Text(text = especialidade, color = Color(0xffe88ba0))
+                Text(text = "especialidade", color = Color(0xffe88ba0))
                 Text(text = descrição, color = Color(0xff6d6d6d), fontSize = 13.sp)
             }
         }
@@ -64,7 +55,7 @@ fun UserCard(
 
 @Composable
 fun CardMock(modifier: Modifier = Modifier) {
-       UserCard("titulo", "categoria", "descriçao")
+    UserCard("titulo", "categoria", "descriçao")
 }
 
 @Preview

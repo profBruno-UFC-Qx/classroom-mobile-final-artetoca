@@ -8,9 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun Artesoes(modifier: Modifier = Modifier) {
+
+    val viewModel: ArtesaosViewModel = viewModel()
+
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
@@ -18,8 +22,10 @@ fun Artesoes(modifier: Modifier = Modifier) {
             .background(color = Color(0xfffef5f5))
     ) {
         Banner()
-        repeat(5) {
-            CardMock()
+        Column() {
+            viewModel.artesaos.forEach {
+                UserCard(it.nome, it.descricao, it.img)
+            }
         }
         FinalCard()
     }

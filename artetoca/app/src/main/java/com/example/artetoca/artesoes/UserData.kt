@@ -1,8 +1,8 @@
 package com.example.artetoca.artesoes
 
-data class UserData(
-    val nome: String,
-    val categoria: String,
-    val descricao: String,
-    val img: String,
+data class Artesao(
+    val nome: String = "",
+    val descricao: String = "",
+    val data: String = "",
+    val img: String = ""
 )
