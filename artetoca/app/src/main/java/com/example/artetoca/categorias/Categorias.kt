@@ -23,7 +23,7 @@ data class Categoria(
 
 val categorias = listOf(
     Categoria("Bordado"),
-    Categoria("Quadros"),
+    Categoria("Pinturas"),
     Categoria("Crochê"),
     Categoria("Macramê"),
     Categoria("Palha"),
