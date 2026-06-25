@@ -1,35 +1,33 @@
 package com.example.artetoca.artesoes
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.firestore
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
-class ArtesaosViewModel : ViewModel() {
+class ArtesaosViewModel(
+    private val repository: ArtesaoRepository = ArtesaoRepository()
+) : ViewModel() {
 
-    private val db = Firebase.firestore
+    private val _artesaos = MutableStateFlow<List<Artesao>>(emptyList())
+    val artesaos: StateFlow<List<Artesao>> = _artesaos.asStateFlow()
 
-    var artesaos by mutableStateOf<List<Artesao>>(emptyList())
-        private set
-
-    var isLoading by mutableStateOf(true)
-        private set
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
     init {
         fetchArtesaos()
     }
 
     private fun fetchArtesaos() {
-        db.collection("artesaos") // nome da sua coleção
-            .get()
-            .addOnSuccessListener { result ->
-                artesaos = result.documents.mapNotNull { it.toObject(Artesao::class.java) }
-                isLoading = false
+        viewModelScope.launch {
+            try {
+                _artesaos.value = repository.getArtesaos()
+            } finally {
+                _isLoading.value = false
             }
-            .addOnFailureListener {
-                isLoading = false
-            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.artetoca.categorias
+package com.example.artetoca
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.Image

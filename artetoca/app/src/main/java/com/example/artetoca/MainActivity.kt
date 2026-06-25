@@ -23,11 +23,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import com.example.artetoca.R.drawable
+import com.example.artetoca.Screen.Artesoes
+import com.example.artetoca.Screen.Bordado
+import com.example.artetoca.Screen.Carrinho
+import com.example.artetoca.Screen.Croche
+import com.example.artetoca.Screen.Home
+import com.example.artetoca.Screen.Macrame
+import com.example.artetoca.Screen.Palha
+import com.example.artetoca.Screen.Papel
+import com.example.artetoca.Screen.Pintura
 import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.carrinho.Carrinho
 import com.example.artetoca.ui.theme.ArtetocaTheme
@@ -45,16 +55,16 @@ class MainActivity : ComponentActivity() {
 }
 
 val navItems = listOf(
-    Pair("Home", R.drawable.home_icon),
-    Pair("Info", R.drawable.info_circle),
-    Pair("Artesoes", R.drawable.people),
-    Pair("Cart", R.drawable.shopping_cart)
+    Pair("Home", drawable.home_icon),
+    Pair("Info", drawable.info_circle),
+    Pair("Artesoes", drawable.people),
+    Pair("Cart", drawable.shopping_cart)
 )
 
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun ArtetocaApp() {
-    val backStack = rememberNavBackStack(Screen.Home)
+    val backStack = rememberNavBackStack(Home)
     val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
     var selectedTab by remember { mutableIntStateOf(0) }
 
@@ -67,9 +77,9 @@ fun ArtetocaApp() {
                         onClick = {
                             selectedTab = index
                             when (index) {
-                                0 -> backStack.add(Screen.Home)
-                                2 -> backStack.add(Screen.Artesoes)
-                                3 -> backStack.add(Screen.Carrinho)
+                                0 -> backStack.add(Home)
+                                2 -> backStack.add(Artesoes)
+                                3 -> backStack.add(Carrinho)
                             }
                         },
                         icon = {
@@ -88,13 +98,13 @@ fun ArtetocaApp() {
         NavDisplay(
             modifier = Modifier.padding(innerPadding),
             backStack = backStack,
-            sceneStrategy = listDetailStrategy,
+            sceneStrategies = listOf(listDetailStrategy),
             entryDecorators = listOf(
                 rememberViewModelStoreNavEntryDecorator()
             ),
             onBack = { if (backStack.size > 1) backStack.removeLastOrNull() },
             entryProvider = entryProvider {
-                entry<Screen.Home>(
+                entry<Home>(
                     metadata = ListDetailSceneStrategy.listPane(
                         detailPlaceholder = { Text("Selecione uma categoria") }
                     )
@@ -103,25 +113,25 @@ fun ArtetocaApp() {
                         modifier = Modifier.fillMaxWidth(),
                         onCategoriaClick = { nome ->
                             when (nome) {
-                                "Bordado" -> backStack.add(Screen.Bordado)
-                                "Crochê", "Croche" -> backStack.add(Screen.Croche)
-                                "Pinturas" -> backStack.add(Screen.Pintura)
-                                "Papel Machê" -> backStack.add(Screen.Papel)
-                                "Palha" -> backStack.add(Screen.Palha)
-                                "Macramê", "Macrame" -> backStack.add(Screen.Macrame)
+                                "Bordado" -> backStack.add(Bordado)
+                                "Crochê", "Croche" -> backStack.add(Croche)
+                                "Pinturas" -> backStack.add(Pintura)
+                                "Papel Machê" -> backStack.add(Papel)
+                                "Palha" -> backStack.add(Palha)
+                                "Macramê", "Macrame" -> backStack.add(Macrame)
                                 else -> Unit
                             }
                         }
                     )
                 }
-                entry<Screen.Bordado>(metadata = ListDetailSceneStrategy.detailPane()) { bordado() }
-                entry<Screen.Croche>(metadata = ListDetailSceneStrategy.detailPane()) { croche() }
-                entry<Screen.Pintura>(metadata = ListDetailSceneStrategy.detailPane()) { pintura() }
-                entry<Screen.Papel>(metadata = ListDetailSceneStrategy.detailPane()) { papel() }
-                entry<Screen.Palha>(metadata = ListDetailSceneStrategy.detailPane()) { palha() }
-                entry<Screen.Macrame>(metadata = ListDetailSceneStrategy.detailPane()) { macrame() }
-                entry<Screen.Artesoes> { Artesoes() }
-                entry<Screen.Carrinho> { Carrinho() }
+                entry<Bordado>(metadata = ListDetailSceneStrategy.detailPane()) { bordado() }
+                entry<Croche>(metadata = ListDetailSceneStrategy.detailPane()) { croche() }
+                entry<Pintura>(metadata = ListDetailSceneStrategy.detailPane()) { pintura() }
+                entry<Papel>(metadata = ListDetailSceneStrategy.detailPane()) { papel() }
+                entry<Palha>(metadata = ListDetailSceneStrategy.detailPane()) { palha() }
+                entry<Macrame>(metadata = ListDetailSceneStrategy.detailPane()) { macrame() }
+                entry<Artesoes> { Artesoes() }
+                entry<Carrinho> { Carrinho() }
             }
         )
     }
