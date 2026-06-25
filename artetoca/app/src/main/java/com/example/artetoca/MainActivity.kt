@@ -13,22 +13,24 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
-import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffoldRole
-import androidx.compose.material3.adaptive.navigation.NavigableListDetailPaneScaffold
-import androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator
+import androidx.compose.material3.adaptive.navigation3.ListDetailSceneStrategy
+import androidx.compose.material3.adaptive.navigation3.rememberListDetailSceneStrategy
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.ui.NavDisplay
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.carrinho.Carrinho
 import com.example.artetoca.ui.theme.ArtetocaTheme
-import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,8 +54,8 @@ val navItems = listOf(
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun ArtetocaApp() {
-    val navigator = rememberListDetailPaneScaffoldNavigator<String>()
-    val coroutineScope = rememberCoroutineScope()
+    val backStack = rememberNavBackStack(Screen.Home)
+    val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
     var selectedTab by remember { mutableIntStateOf(0) }
 
     Scaffold(
@@ -62,7 +64,14 @@ fun ArtetocaApp() {
                 navItems.forEachIndexed { index, (label, icon) ->
                     NavigationBarItem(
                         selected = selectedTab == index,
-                        onClick = { selectedTab = index },
+                        onClick = {
+                            selectedTab = index
+                            when (index) {
+                                0 -> backStack.add(Screen.Home)
+                                2 -> backStack.add(Screen.Artesoes)
+                                3 -> backStack.add(Screen.Carrinho)
+                            }
+                        },
                         icon = {
                             Icon(
                                 modifier = Modifier.size(20.dp),
@@ -76,34 +85,44 @@ fun ArtetocaApp() {
             }
         }
     ) { innerPadding ->
-        when (selectedTab) {
-            0 -> NavigableListDetailPaneScaffold(
-                modifier = Modifier.padding(innerPadding),
-                navigator = navigator,
-                listPane = {
+        NavDisplay(
+            modifier = Modifier.padding(innerPadding),
+            backStack = backStack,
+            sceneStrategy = listDetailStrategy,
+            entryDecorators = listOf(
+                rememberViewModelStoreNavEntryDecorator()
+            ),
+            onBack = { if (backStack.size > 1) backStack.removeLastOrNull() },
+            entryProvider = entryProvider {
+                entry<Screen.Home>(
+                    metadata = ListDetailSceneStrategy.listPane(
+                        detailPlaceholder = { Text("Selecione uma categoria") }
+                    )
+                ) {
                     PaginaInicial(
                         modifier = Modifier.fillMaxWidth(),
-                        onCategoriaClick = { categoriaNome ->
-                            coroutineScope.launch {
-                                navigator.navigateTo(
-                                    ListDetailPaneScaffoldRole.Detail,
-                                    categoriaNome
-                                )
+                        onCategoriaClick = { nome ->
+                            when (nome) {
+                                "Bordado" -> backStack.add(Screen.Bordado)
+                                "Crochê", "Croche" -> backStack.add(Screen.Croche)
+                                "Pinturas" -> backStack.add(Screen.Pintura)
+                                "Papel Machê" -> backStack.add(Screen.Papel)
+                                "Palha" -> backStack.add(Screen.Palha)
+                                "Macramê", "Macrame" -> backStack.add(Screen.Macrame)
+                                else -> Unit
                             }
                         }
                     )
-                },
-                detailPane = {
-                    val categoria = navigator.currentDestination?.contentKey
-                    if (categoria != null) {
-                        Text("Categoria: $categoria", modifier = Modifier.padding(innerPadding))
-                    }
                 }
-            )
-
-            1 -> sobre(modifier = Modifier.padding(innerPadding))
-            2 -> Artesoes(modifier = Modifier.padding(innerPadding))
-            3 -> Carrinho(modifier = Modifier.padding(innerPadding))
-        }
+                entry<Screen.Bordado>(metadata = ListDetailSceneStrategy.detailPane()) { bordado() }
+                entry<Screen.Croche>(metadata = ListDetailSceneStrategy.detailPane()) { croche() }
+                entry<Screen.Pintura>(metadata = ListDetailSceneStrategy.detailPane()) { pintura() }
+                entry<Screen.Papel>(metadata = ListDetailSceneStrategy.detailPane()) { papel() }
+                entry<Screen.Palha>(metadata = ListDetailSceneStrategy.detailPane()) { palha() }
+                entry<Screen.Macrame>(metadata = ListDetailSceneStrategy.detailPane()) { macrame() }
+                entry<Screen.Artesoes> { Artesoes() }
+                entry<Screen.Carrinho> { Carrinho() }
+            }
+        )
     }
 }
