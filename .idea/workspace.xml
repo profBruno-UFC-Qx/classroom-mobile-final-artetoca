@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96961079-2b9b-4b88-8adc-1a57f4260397" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/PaginaInicial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/PaginaInicial.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Categorias.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Categorias.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +77,14 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/lopes/AndroidStudioProjects/classroom-mobile-final-artetoca-v2/artetoca/build.gradle.kts"
+    "last_opened_file_path": "/home/lopes/AndroidStudioProjects/classroom-mobile-final-artetoca-v2/artetoca/app/src/main/res/drawable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/artetoca/app/src/main/res/drawable" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="artetoca.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="artetoca.app" />
