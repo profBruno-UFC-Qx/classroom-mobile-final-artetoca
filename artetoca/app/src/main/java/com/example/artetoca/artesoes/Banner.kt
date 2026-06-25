@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.artesoes
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.artetoca.R.drawable
 
 @Composable
 fun Banner(modifier: Modifier = Modifier) {
@@ -35,7 +36,7 @@ fun Banner(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.artetoca),
+                painter = painterResource(id = drawable.artetoca),
                 contentDescription = null,
                 modifier = Modifier.size(80.dp),
             )

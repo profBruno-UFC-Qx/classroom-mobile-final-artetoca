@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.categorias
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

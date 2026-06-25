@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.categorias
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.Image
@@ -30,6 +30,7 @@ import androidx.compose.material3.Card
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.artetoca.R.drawable
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
@@ -108,7 +109,7 @@ fun CardProdutoPapel(produto: Produto) {
 
 @Composable
 fun papel( modifier: Modifier = Modifier) {
-    val image = painterResource(R.drawable.artetoca)
+    val image = painterResource(drawable.artetoca)
     val Rosa = Color(0xFFFEF5F5)
     val RosaTitulo = Color(0xFFE88BA0)
 
