@@ -85,7 +85,7 @@ fun PaginaInicial(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Rosa)
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 24.dp, vertical = 12.dp)
         ) {
 
             item {
