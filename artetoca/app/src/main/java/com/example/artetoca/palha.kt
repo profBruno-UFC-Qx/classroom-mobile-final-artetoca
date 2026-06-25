@@ -41,6 +41,7 @@ fun CardProdutoPalha(produto: Produto) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .background(RosaClaro)
             .padding(horizontal = 12.dp,
                 vertical = 8.dp ),
         shape = RoundedCornerShape(6.dp),
@@ -72,7 +73,6 @@ fun CardProdutoPalha(produto: Produto) {
 
             Column(
                 modifier = Modifier.weight(1f)
-                                    .background(Rosa)
             ){
                 Text(
                     text = produto.nome,
