@@ -72,6 +72,7 @@ fun CardProdutoPapel(produto: Produto) {
 
             Column(
                 modifier = Modifier.weight(1f)
+                            .background(Rosa)
             ){
                 Text(
                     text = produto.nome,
