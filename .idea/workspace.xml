@@ -12,6 +12,7 @@
     <list default="true" id="96961079-2b9b-4b88-8adc-1a57f4260397" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/CarrinhoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/CarrinhoViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/ItemCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/ItemCard.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -61,7 +61,7 @@ fun ItemCard(
                 .weight(1f)
         ) {
             Text(
-                text = "item1",
+                text = "item.nome",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold
             )

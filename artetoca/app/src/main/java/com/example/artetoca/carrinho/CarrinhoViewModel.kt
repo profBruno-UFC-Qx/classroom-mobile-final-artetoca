@@ -3,10 +3,10 @@ package com.example.artetoca.carrinho
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import java.util.UUID
+import com.example.artetoca.Produto
 
 
 class CarrinhoViewModel : ViewModel() {
-
     val items = mutableStateListOf<ItemCardData>()
 
     fun adicionarItem(produto : Produto) {
