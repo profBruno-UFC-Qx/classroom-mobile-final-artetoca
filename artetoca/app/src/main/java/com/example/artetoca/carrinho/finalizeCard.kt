@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun FinalizerCard(valorTotal:Float, modifier: Modifier = Modifier) {
     val Rosa = Color(0xFFE88BA0)
+    val RosaClaro = Color(0xFFF9E7EA)
     Column(
         modifier = modifier
             .background(Color.White, shape = MaterialTheme.shapes.medium)
@@ -45,8 +46,9 @@ fun FinalizerCard(valorTotal:Float, modifier: Modifier = Modifier) {
         ) {
             Text(
                 text = "Finalizar pedido",
-                fontWeight = FontWeight.Light,
-                fontSize = 24.sp
+                fontWeight = FontWeight.SemiBold,
+                color = RosaClaro,
+                fontSize = 20.sp
             )
         }
         Text(

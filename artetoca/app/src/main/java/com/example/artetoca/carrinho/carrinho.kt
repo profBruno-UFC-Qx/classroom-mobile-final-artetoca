@@ -25,6 +25,7 @@ import com.example.artetoca.R
 
 @Composable
 fun Carrinho(viewModel: CarrinhoViewModel, modifier: Modifier = Modifier) {
+    val Rosa = Color(0xFFE88BA0)
 
     Column(modifier = modifier.fillMaxSize()) {
         Row(
@@ -43,6 +44,7 @@ fun Carrinho(viewModel: CarrinhoViewModel, modifier: Modifier = Modifier) {
             Spacer(modifier.width(16.dp))
             Text(
                 text = "Meu Carrinho",
+                color = Rosa,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Light
             )
