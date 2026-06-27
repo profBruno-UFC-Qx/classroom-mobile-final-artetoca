@@ -35,7 +35,7 @@ import com.example.artetoca.R.drawable
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
-fun CardProdutoMacrame(produto: Produto) {
+fun CardProdutoMacrame(produto: Produto, onComprar: () -> Unit) {
     val Rosa = Color(0xFFE88BA0)
     val RosaClaro = Color(0xFFF9E7EA)
 
@@ -92,7 +92,7 @@ fun CardProdutoMacrame(produto: Produto) {
             Spacer(modifier = Modifier.height(12.dp))
 
             Button(
-                onClick = { },
+                onClick = onComprar,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Rosa
                 ),
@@ -109,7 +109,8 @@ fun CardProdutoMacrame(produto: Produto) {
 }
 
 @Composable
-fun macrame( modifier: Modifier = Modifier) {
+fun macrame( modifier: Modifier = Modifier,
+             onComprarClick : (Produto) -> Unit = {} ) {
     val image = painterResource(drawable.artetoca)
     val Rosa = Color(0xFFFEF5F5)
     val RosaTitulo = Color(0xFFE88BA0)
@@ -158,18 +159,21 @@ fun macrame( modifier: Modifier = Modifier) {
             }
         }
 
-       // Spacer(modifier = Modifier.height(24.dp))
+        // Spacer(modifier = Modifier.height(24.dp))
 
         macrame.forEach { produto ->
-            CardProdutoMacrame(produto = produto)
+            CardProdutoMacrame(
+                produto = produto,
+                onComprar = { onComprarClick(produto) }
+            )
         }
     }
-}
 
-@Preview(showBackground = true)
-@Composable
-fun macramePreview() {
-    ArtetocaTheme {
-        macrame()
+    @Preview(showBackground = true)
+    @Composable
+    fun macramePreview() {
+        ArtetocaTheme {
+            macrame()
+        }
     }
 }

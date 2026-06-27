@@ -35,7 +35,7 @@ import com.example.artetoca.R.drawable
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
-fun CardProdutoPintura(produto: Produto) {
+fun CardProdutoPintura(produto: Produto, onComprar: () -> Unit) {
     val Rosa = Color(0xFFE88BA0)
     val RosaClaro = Color(0xFFF9E7EA)
 
@@ -92,7 +92,7 @@ fun CardProdutoPintura(produto: Produto) {
             Spacer(modifier = Modifier.height(12.dp))
 
             Button(
-                onClick = { },
+                onClick = onComprar,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Rosa
                 ),
@@ -109,7 +109,8 @@ fun CardProdutoPintura(produto: Produto) {
 }
 
 @Composable
-fun pintura( modifier: Modifier = Modifier) {
+fun pintura( modifier: Modifier = Modifier,
+             onComprarClick: (Produto) -> Unit = {}) {
     val image = painterResource(drawable.artetoca)
     val Rosa = Color(0xFFFEF5F5)
     val RosaTitulo = Color(0xFFE88BA0)
@@ -161,7 +162,9 @@ fun pintura( modifier: Modifier = Modifier) {
         //Spacer(modifier = Modifier.height(24.dp))
 
         pinturas.forEach { produto ->
-            CardProdutoPintura(produto = produto)
+            CardProdutoPintura(produto = produto,
+                onComprar = { onComprarClick(produto) }
+            )
         }
     }
 }

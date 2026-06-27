@@ -35,7 +35,7 @@ import com.example.artetoca.R.drawable
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
-fun CardProdutoPapel(produto: Produto) {
+fun CardProdutoPapel(produto: Produto, onComprar: () -> Unit) {
     val Rosa = Color(0xFFE88BA0)
     val RosaClaro = Color(0xFFF9E7EA)
 
@@ -92,7 +92,7 @@ fun CardProdutoPapel(produto: Produto) {
             Spacer(modifier = Modifier.height(12.dp))
 
             Button(
-                onClick = { },
+                onClick = onComprar,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Rosa
                 ),
@@ -109,62 +109,67 @@ fun CardProdutoPapel(produto: Produto) {
 }
 
 @Composable
-fun papel( modifier: Modifier = Modifier) {
-    val image = painterResource(drawable.artetoca)
-    val Rosa = Color(0xFFFEF5F5)
-    val RosaTitulo = Color(0xFFE88BA0)
+fun papel( modifier: Modifier = Modifier,
+           onComprarClick: (Produto) -> Unit = {}) {
+               val image = painterResource(drawable.artetoca)
+               val Rosa = Color(0xFFFEF5F5)
+               val RosaTitulo = Color(0xFFE88BA0)
 
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Rosa)
-            .verticalScroll(rememberScrollState())
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.White)
-                .padding(24.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = image,
-                contentDescription = "Logo da associacao",
-                modifier = Modifier
-                    .size(64.dp)
-                    .clip(CircleShape)
-            )
-            Spacer(modifier = Modifier.width(16.dp))
+               Column(
+                   modifier = modifier
+                       .fillMaxSize()
+                       .background(Rosa)
+                       .verticalScroll(rememberScrollState())
+               ) {
+                   Row(
+                       modifier = Modifier
+                           .fillMaxWidth()
+                           .background(Color.White)
+                           .padding(24.dp),
+                       verticalAlignment = Alignment.CenterVertically
+                   ) {
+                       Image(
+                           painter = image,
+                           contentDescription = "Logo da associacao",
+                           modifier = Modifier
+                               .size(64.dp)
+                               .clip(CircleShape)
+                       )
+                       Spacer(modifier = Modifier.width(16.dp))
 
-            Column {
-                Text(
-                    text = "Artetoca",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Light,
-                    color = RosaTitulo,
-                    textAlign = TextAlign.Left,
-                    modifier = Modifier.fillMaxWidth()
+                       Column {
+                           Text(
+                               text = "Artetoca",
+                               fontSize = 24.sp,
+                               fontWeight = FontWeight.Light,
+                               color = RosaTitulo,
+                               textAlign = TextAlign.Left,
+                               modifier = Modifier.fillMaxWidth()
 
-                )
-                Text(
-                    text = "Arte feita com amor",
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Light,
-                    color = Color.Gray,
-                    textAlign = TextAlign.Left,
-                    modifier = Modifier.fillMaxWidth()
+                           )
+                           Text(
+                               text = "Arte feita com amor",
+                               fontSize = 14.sp,
+                               fontWeight = FontWeight.Light,
+                               color = Color.Gray,
+                               textAlign = TextAlign.Left,
+                               modifier = Modifier.fillMaxWidth()
 
-                )
-            }
-        }
+                           )
+                       }
+                   }
 
-       // Spacer(modifier = Modifier.height(24.dp))
+                   // Spacer(modifier = Modifier.height(24.dp))
 
-        papel.forEach { produto ->
-            CardProdutoPapel(produto = produto)
-        }
-    }
-}
+                   papel.forEach { produto ->
+                       CardProdutoPapel(
+                           produto = produto,
+                           onComprar = { onComprarClick(produto) }
+                       )
+                   }
+               }
+           }
+
 
 @Preview(showBackground = true)
 @Composable

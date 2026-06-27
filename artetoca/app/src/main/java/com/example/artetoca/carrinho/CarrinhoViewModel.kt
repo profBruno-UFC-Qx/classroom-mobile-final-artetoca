@@ -11,6 +11,8 @@ class CarrinhoViewModel : ViewModel() {
 
     fun adicionarItem(produto : Produto) {
         val precoFloat = produto.preco
+            .replace(".", "")
+            .replace(",", ".")
             .toFloatOrNull() ?: Of
 
         val index = items.indexOfFirst { it.nome == produto.nome && it.img == produto.imagem }

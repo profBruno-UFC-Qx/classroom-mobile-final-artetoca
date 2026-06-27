@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.InternalFoundationApi
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -127,15 +126,26 @@ fun ArtetocaApp() {
                         }
                     )
                 }
-                entry<Bordado>(metadata = ListDetailSceneStrategy.detailPane()) { bordado() }
-                entry<Croche>(metadata = ListDetailSceneStrategy.detailPane()) { croche() }
-                entry<Pintura>(metadata = ListDetailSceneStrategy.detailPane()) { pintura() }
-                entry<Papel>(metadata = ListDetailSceneStrategy.detailPane()) { papel() }
-                entry<Palha>(metadata = ListDetailSceneStrategy.detailPane()) { palha() }
-                entry<Macrame>(metadata = ListDetailSceneStrategy.detailPane()) { macrame() }
-                entry<Sobre> { sobre() }
+                entry<Bordado>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    bordado(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
+                entry<Croche>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    croche(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
+                entry<Pintura>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    pintura(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
+                entry<Papel>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    papel(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
+                entry<Palha>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    palha(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
+                entry<Macrame>(metadata = ListDetailSceneStrategy.detailPane()) {
+                    macrame(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
+                }
                 entry<Artesoes> { Artesoes() }
-                entry<Carrinho> { Carrinho() }
+                entry<Carrinho> { Carrinho(viewModel = carrinhoViewModel) }
             }
         )
     }
