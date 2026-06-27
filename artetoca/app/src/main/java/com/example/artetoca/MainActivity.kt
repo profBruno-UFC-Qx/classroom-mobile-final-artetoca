@@ -41,6 +41,8 @@ import com.example.artetoca.Screen.Pintura
 import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.Screen.Sobre
 import com.example.artetoca.carrinho.Carrinho
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.artetoca.carrinho.CarrinhoViewModel
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 class MainActivity : ComponentActivity() {
@@ -68,6 +70,7 @@ fun ArtetocaApp() {
     val backStack = rememberNavBackStack(Home)
     val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
     var selectedTab by remember { mutableIntStateOf(0) }
+    val carrinhoViewModel: CarrinhoViewModel = viewModel()
 
     Scaffold(
         bottomBar = {
@@ -145,6 +148,7 @@ fun ArtetocaApp() {
                     macrame(onComprarClick = { produto -> carrinhoViewModel.adicionarItem(produto) })
                 }
                 entry<Artesoes> { Artesoes() }
+                entry<Sobre> { sobre() }
                 entry<Carrinho> { Carrinho(viewModel = carrinhoViewModel) }
             }
         )

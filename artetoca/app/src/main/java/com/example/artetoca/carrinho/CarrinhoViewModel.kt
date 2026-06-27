@@ -2,9 +2,8 @@ package com.example.artetoca.carrinho
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
-import java.util.UUID
 import com.example.artetoca.Produto
-
+import java.util.UUID
 
 class CarrinhoViewModel : ViewModel() {
     val items = mutableStateListOf<ItemCardData>()
@@ -13,7 +12,7 @@ class CarrinhoViewModel : ViewModel() {
         val precoFloat = produto.preco
             .replace(".", "")
             .replace(",", ".")
-            .toFloatOrNull() ?: Of
+            .toFloatOrNull() ?: 0f
 
         val index = items.indexOfFirst { it.nome == produto.nome && it.img == produto.imagem }
         if(index != -1) {

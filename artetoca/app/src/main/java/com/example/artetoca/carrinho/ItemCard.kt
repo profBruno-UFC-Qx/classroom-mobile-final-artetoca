@@ -20,7 +20,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import android.R.attr.onClick
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -62,7 +61,7 @@ fun ItemCard(
                 .weight(1f)
         ) {
             Text(
-                text = "item.nome",
+                text = item.nome,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold
             )
@@ -74,7 +73,7 @@ fun ItemCard(
                     { decrementItem(item.id, item.qtd) },
                     { incrementItem(item.id, item.qtd) })
                 Spacer(modifier = Modifier.weight(1f))
-                Text("\"R\$ %.2f\".format(item.preco * item.qtd).replace(\".\", \",\"))
+                Text("R$ %.2f".format(item.preco * item.qtd).replace(".", ","))
                 IconButton(
                     onClick = { removeItem(item.id) },
                 ) {
