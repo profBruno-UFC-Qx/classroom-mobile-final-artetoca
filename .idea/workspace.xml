@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96961079-2b9b-4b88-8adc-1a57f4260397" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Categorias.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/Categorias.kt" afterDir="false" />
     </list>

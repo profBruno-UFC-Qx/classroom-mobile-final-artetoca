@@ -19,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.layout.padding
 
 data class Categoria(
     val nome: String
@@ -58,7 +59,8 @@ fun CategoriaVendas(
     ) {
         Icon(
             painter = painterResource(id = R.drawable.heart2),
-            modifier = Modifier.size(18.dp),
+            modifier = Modifier.size(20.dp)
+                .padding(4.dp),
             tint = RosaEscuro,
             contentDescription = null
         )
