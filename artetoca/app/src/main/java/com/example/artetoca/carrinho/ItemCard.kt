@@ -63,7 +63,7 @@ fun ItemCard(
             Text(
                 text = item.nome,
                 fontSize = 16.sp,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight.Light
             )
             Row(
                 verticalAlignment = Alignment.CenterVertically

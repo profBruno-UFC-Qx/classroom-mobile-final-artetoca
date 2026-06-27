@@ -10,25 +10,31 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.artetoca.R.drawable
 
 @Composable
 fun Banner(modifier: Modifier = Modifier) {
+    val Rosa = Color(0xFFFFD8D8)
     Box(
         modifier = modifier
             .fillMaxWidth()
             .height(300.dp)
-            .background(Brush.verticalGradient(listOf(Color(0xffe98ba0), Color(0xfffdd5de))))
+            .background(Color(0xFFEC8799))
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -37,19 +43,23 @@ fun Banner(modifier: Modifier = Modifier) {
         ) {
             Image(
                 painter = painterResource(id = drawable.artetoca),
+                modifier = Modifier
+                    .size(80.dp)
+                    .clip(CircleShape),
                 contentDescription = null,
-                modifier = Modifier.size(80.dp),
             )
             Text(
                 text = "Nossos Artesãos",
-                style = MaterialTheme.typography.headlineMedium,
-                color = Color.White,
+                color = Rosa,
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Light,
                 modifier = Modifier.padding(top = 16.dp)
             )
             Text(
                 text = "Conheçam os talentos que produzem as obras",
-                style = MaterialTheme.typography.bodyLarge,
-                color = Color.White.copy(alpha = 0.8f),
+                fontWeight = FontWeight.Light,
+                fontSize = 16.sp,
+                color = Rosa,
                 modifier = Modifier.padding(top = 8.dp)
             )
         }

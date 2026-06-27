@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun FinalCard(modifier: Modifier = Modifier) {
@@ -28,14 +30,16 @@ fun FinalCard(modifier: Modifier = Modifier) {
     ) {
         Text(
             text = "Faça parte da nossa família",
-            style = MaterialTheme.typography.headlineSmall,
-            color = Color(0xffec9daf),
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 20.sp,
+            color = Color(0xFFFC6F8D),
             textAlign = TextAlign.Center
         )
         Text(
             text = "Quer se tornar um artesão da Artetoca? Entre em contato conosco!",
-            style = MaterialTheme.typography.bodyLarge,
+            fontWeight = FontWeight.Light,
             color = Color(0xff6c6b6b).copy(0.8f),
+            fontSize = 16.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(top = 8.dp, start = 24.dp, end = 24.dp)
         )

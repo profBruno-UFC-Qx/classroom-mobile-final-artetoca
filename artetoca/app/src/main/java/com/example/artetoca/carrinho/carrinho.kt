@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.artetoca.R
@@ -42,7 +43,8 @@ fun Carrinho(viewModel: CarrinhoViewModel, modifier: Modifier = Modifier) {
             Spacer(modifier.width(16.dp))
             Text(
                 text = "Meu Carrinho",
-                fontSize = 24.sp
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light
             )
         }
         Column(

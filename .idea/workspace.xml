@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="96961079-2b9b-4b88-8adc-1a57f4260397" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/finalizeCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/finalizeCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/artesoes/Banner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/artesoes/Banner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/artesoes/FinalCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/artesoes/FinalCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/ItemCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/ItemCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/carrinho.kt" beforeDir="false" afterPath="$PROJECT_DIR$/artetoca/app/src/main/java/com/example/artetoca/carrinho/carrinho.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
