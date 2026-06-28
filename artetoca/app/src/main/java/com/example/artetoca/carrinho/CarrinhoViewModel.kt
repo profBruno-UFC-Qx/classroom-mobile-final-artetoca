@@ -2,7 +2,7 @@ package com.example.artetoca.carrinho
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
-import com.example.artetoca.Produto
+import com.example.artetoca.categorias.Produto
 import java.util.UUID
 
 class CarrinhoViewModel : ViewModel() {
