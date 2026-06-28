@@ -129,12 +129,12 @@ fun sobre( modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth()
 
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(12.dp))
         }
 
         Column(
              modifier = Modifier.background(Rosa)
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 18.dp)
         ){
             Text(
                 text = "Nossos Valores",
@@ -160,7 +160,7 @@ fun sobre( modifier: Modifier = Modifier) {
 
         Column(
             modifier = Modifier.background(Rosa)
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 18.dp)
         ){
             Text(
                 text = "Contato",
@@ -171,17 +171,17 @@ fun sobre( modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth()
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-                text = "Email: aartetoca@gmail.com" +
-                        "Whatsapp: (85) 992001072" +
-                        "Instagram: @artetoca_ocara" +
-                         "Endereço: Arena Kactus - Ocara / CE",
+                text = "Email: aartetoca@gmail.com \n" +
+                        "Whatsapp: (85) 992001072 \n" +
+                        "Instagram: @artetoca_ocara \n" +
+                         "Endereço: Arena Kactus - Ocara / CE \n",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Light,
                 color = Color.Gray,
-                textAlign = TextAlign.Justify,
+                textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(16.dp))
