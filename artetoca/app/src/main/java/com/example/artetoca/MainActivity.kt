@@ -17,12 +17,13 @@ import androidx.compose.material3.adaptive.navigation3.ListDetailSceneStrategy
 import androidx.compose.material3.adaptive.navigation3.rememberListDetailSceneStrategy
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
@@ -38,10 +39,9 @@ import com.example.artetoca.Screen.Macrame
 import com.example.artetoca.Screen.Palha
 import com.example.artetoca.Screen.Papel
 import com.example.artetoca.Screen.Pintura
-import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.Screen.Sobre
+import com.example.artetoca.artesoes.Artesoes
 import com.example.artetoca.carrinho.Carrinho
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.artetoca.carrinho.CarrinhoViewModel
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
@@ -149,7 +149,12 @@ fun ArtetocaApp() {
                 }
                 entry<Artesoes> { Artesoes() }
                 entry<Sobre> { sobre() }
-                entry<Carrinho> { Carrinho(viewModel = carrinhoViewModel) }
+                entry<Carrinho> {
+                    Carrinho(viewModel = carrinhoViewModel, onExploreClick = {
+                        backStack.clear()
+                        backStack.add(Home)
+                    })
+                }
             }
         )
     }

@@ -22,11 +22,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.artetoca.R
+import com.example.artetoca.ui.theme.ArtetocaPink
+import com.example.artetoca.ui.theme.Background
 
 @Composable
-fun Carrinho(viewModel: CarrinhoViewModel, modifier: Modifier = Modifier) {
-    val Rosa = Color(0xFFE88BA0)
-
+fun Carrinho(
+    viewModel: CarrinhoViewModel,
+    onExploreClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Column(modifier = modifier.fillMaxSize()) {
         Row(
             modifier = Modifier
@@ -39,34 +43,38 @@ fun Carrinho(viewModel: CarrinhoViewModel, modifier: Modifier = Modifier) {
             Icon(
                 painter = painterResource(id = R.drawable.shopping_cart),
                 contentDescription = null,
-                tint = Color(0xffe88ba0)
+                tint = ArtetocaPink
             )
             Spacer(modifier.width(16.dp))
             Text(
                 text = "Meu Carrinho",
-                color = Rosa,
+                color = ArtetocaPink,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Light
             )
         }
-        Column(
-            modifier = Modifier
-                .fillMaxHeight()
-                .background(Color(0xFFFFE6E6))
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            ItemList(
-                viewModel.items,
-                { viewModel.removeItem(it) },
-                { id, qtd -> viewModel.updateItem(id, qtd + 1) },
-                { id, qtd ->
-                    if (qtd == 1) viewModel.removeItem(id)
-                    else viewModel.updateItem(id, qtd - 1)
-                },
-                Modifier.weight(1f)
-            )
-            FinalizerCard(viewModel.items.sumOf { (it.preco * it.qtd).toDouble() }.toFloat())
+        if (viewModel.items.isEmpty()) {
+            EmptyCartMessage(onExploreClick = onExploreClick)
+        } else {
+            Column(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .background(Background)
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                ItemList(
+                    viewModel.items,
+                    { viewModel.removeItem(it) },
+                    { id, qtd -> viewModel.updateItem(id, qtd + 1) },
+                    { id, qtd ->
+                        if (qtd == 1) viewModel.removeItem(id)
+                        else viewModel.updateItem(id, qtd - 1)
+                    },
+                    Modifier.weight(1f)
+                )
+                FinalizerCard(viewModel.items.sumOf { (it.preco * it.qtd).toDouble() }.toFloat())
+            }
         }
     }
 }
