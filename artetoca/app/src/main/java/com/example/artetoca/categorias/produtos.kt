@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.categorias
 
 import com.example.artetoca.R.drawable
 

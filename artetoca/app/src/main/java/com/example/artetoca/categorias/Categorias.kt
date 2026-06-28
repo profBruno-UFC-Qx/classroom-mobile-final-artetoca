@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.categorias
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -19,7 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.layout.padding
+import com.example.artetoca.R.drawable
 
 data class Categoria(
     val nome: String
@@ -58,7 +59,7 @@ fun CategoriaVendas(
         verticalArrangement = Arrangement.Center
     ) {
         Icon(
-            painter = painterResource(id = R.drawable.heart2),
+            painter = painterResource(id = drawable.heart2),
             modifier = Modifier.size(20.dp)
                 .padding(4.dp),
             tint = RosaEscuro,

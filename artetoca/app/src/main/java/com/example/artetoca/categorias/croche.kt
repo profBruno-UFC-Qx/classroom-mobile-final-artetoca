@@ -1,4 +1,4 @@
-package com.example.artetoca
+package com.example.artetoca.categorias
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -35,7 +35,7 @@ import com.example.artetoca.R.drawable
 import com.example.artetoca.ui.theme.ArtetocaTheme
 
 @Composable
-fun CardProdutoBordado(produto: Produto, onComprar: () -> Unit) {
+fun CardProdutoCroche(produto: Produto, onComprar : () -> Unit) {
     val Rosa = Color(0xFFE88BA0)
     val RosaClaro = Color(0xFFF9E7EA)
 
@@ -43,7 +43,7 @@ fun CardProdutoBordado(produto: Produto, onComprar: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 12.dp,
-                        vertical = 8.dp ),
+                    vertical = 8.dp ),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
@@ -97,7 +97,7 @@ fun CardProdutoBordado(produto: Produto, onComprar: () -> Unit) {
                 ),
                 shape = RoundedCornerShape(12.dp)
             ) {
-            
+               
                 Spacer(modifier = Modifier.width(6.dp))
 
                 Text("Comprar")
@@ -108,7 +108,8 @@ fun CardProdutoBordado(produto: Produto, onComprar: () -> Unit) {
 }
 
 @Composable
-fun bordado( modifier: Modifier = Modifier,  onComprarClick: (Produto) -> Unit = {} ) {
+fun croche( modifier: Modifier = Modifier,
+            onComprarClick: (Produto) -> Unit = {}) {
     val image = painterResource(drawable.artetoca)
     val Rosa = Color(0xFFFEF5F5)
     val RosaTitulo = Color(0xFFE88BA0)
@@ -157,20 +158,21 @@ fun bordado( modifier: Modifier = Modifier,  onComprarClick: (Produto) -> Unit =
             }
         }
 
-        // Spacer(modifier = Modifier.height(24.dp))
+        //Spacer(modifier = Modifier.height(24.dp))
 
-      bordados.forEach { produto ->
-          CardProdutoBordado(produto = produto,
-              onComprar = { onComprarClick(produto) }
-          )
-      }
+        croches.forEach { produto ->
+            CardProdutoCroche(produto = produto,
+                onComprar = { onComprarClick(produto) }
+            )
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun bordadoPreview() {
+fun crochePreview() {
     ArtetocaTheme {
-        bordado()
+        croche()
     }
 }
+
