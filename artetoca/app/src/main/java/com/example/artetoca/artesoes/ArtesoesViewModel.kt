@@ -7,10 +7,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class ArtesaosViewModel(
+class ArtesaosViewModel : ViewModel() {
     private val repository: ArtesaoRepository = ArtesaoRepository()
-) : ViewModel() {
-
     private val _artesaos = MutableStateFlow<List<Artesao>>(emptyList())
     val artesaos: StateFlow<List<Artesao>> = _artesaos.asStateFlow()
 
