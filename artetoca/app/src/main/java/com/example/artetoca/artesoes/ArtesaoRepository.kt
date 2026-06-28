@@ -8,7 +8,7 @@ class ArtesaoRepository {
     private val db = Firebase.firestore
 
     suspend fun getArtesaos(): List<Artesao> {
-        return db.collection("artesaos")
+        return db.collection("artesoes")
             .get()
             .await()
             .documents
