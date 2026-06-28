@@ -31,14 +31,14 @@ import com.example.artetoca.ui.theme.ArtetocaTheme
 import com.example.artetoca.ui.theme.Background
 
 @Composable
-fun sobre( modifier: Modifier = Modifier) {
+fun sobre(modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.artetoca)
     val BackgroundTitulo = Color(0xFFE88BA0)
 
     Column(
         modifier = modifier
             .fillMaxWidth()
-           .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState())
     ) {
         Row(
             modifier = Modifier
@@ -77,13 +77,11 @@ fun sobre( modifier: Modifier = Modifier) {
                 )
             }
         }
-
-        //Spacer(modifier = Modifier.height(24.dp))
-
         Column(
-             modifier = Modifier.background(Background)
-                 .padding(horizontal = 24.dp, vertical = 24.dp)
-        ){
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 24.dp, vertical = 24.dp)
+        ) {
             val image = painterResource(R.drawable.artetoca_grupo)
 
             Text(
@@ -92,8 +90,9 @@ fun sobre( modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Light,
                 color = BackgroundTitulo,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-                                .padding(horizontal = 12.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -129,13 +128,14 @@ fun sobre( modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth()
 
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(12.dp))
         }
 
         Column(
-             modifier = Modifier.background(Background)
-                .padding(horizontal = 24.dp)
-        ){
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 18.dp)
+        ) {
             Text(
                 text = "Nossos Valores",
                 fontSize = 24.sp,
@@ -153,6 +153,36 @@ fun sobre( modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Light,
                 color = Color.Gray,
                 textAlign = TextAlign.Justify,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
+        Column(
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 18.dp)
+        ) {
+            Text(
+                text = "Contato",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
+                color = BackgroundTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Text(
+                text = "Email: aartetoca@gmail.com \n" +
+                        "Whatsapp: (85) 992001072 \n" +
+                        "Instagram: @artetoca_ocara \n" +
+                        "Endereço: Arena Kactus - Ocara / CE \n",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
+                color = Color.Gray,
+                textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(16.dp))
