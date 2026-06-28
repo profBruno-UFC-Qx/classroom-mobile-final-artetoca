@@ -1,0 +1,202 @@
+package com.example.artetoca
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.artetoca.ui.theme.ArtetocaTheme
+import com.example.artetoca.ui.theme.Background
+
+@Composable
+fun sobre(modifier: Modifier = Modifier) {
+    val image = painterResource(R.drawable.artetoca)
+    val BackgroundTitulo = Color(0xFFE88BA0)
+
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.White)
+                .padding(24.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "Logo da associacao",
+                modifier = Modifier
+                    .size(64.dp)
+                    .clip(CircleShape)
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Column {
+                Text(
+                    text = "Artetoca",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Light,
+                    color = BackgroundTitulo,
+                    textAlign = TextAlign.Left,
+                    modifier = Modifier.fillMaxWidth()
+
+                )
+                Text(
+                    text = "Arte feita com amor",
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Light,
+                    color = Color.Gray,
+                    textAlign = TextAlign.Left,
+                    modifier = Modifier.fillMaxWidth()
+
+                )
+            }
+        }
+        Column(
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 24.dp, vertical = 24.dp)
+        ) {
+            val image = painterResource(R.drawable.artetoca_grupo)
+
+            Text(
+                text = "Sobre a Artetoca",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
+                color = BackgroundTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Image(
+                painter = image,
+                contentDescription = "Foto com alguns associados da Artetoca na Ceart",
+                modifier = Modifier
+                    .padding(5.dp)
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(12.dp))
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = "Nossa história",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
+                color = BackgroundTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = stringResource(R.string.historia),
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
+                color = Color.Gray,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.fillMaxWidth()
+
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+        }
+
+        Column(
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 18.dp)
+        ) {
+            Text(
+                text = "Nossos Valores",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
+                color = BackgroundTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = stringResource(R.string.valores),
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
+                color = Color.Gray,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
+        Column(
+            modifier = Modifier
+                .background(Background)
+                .padding(horizontal = 18.dp)
+        ) {
+            Text(
+                text = "Contato",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Light,
+                color = BackgroundTitulo,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Text(
+                text = "Email: aartetoca@gmail.com \n" +
+                        "Whatsapp: (85) 992001072 \n" +
+                        "Instagram: @artetoca_ocara \n" +
+                        "Endereço: Arena Kactus - Ocara / CE \n",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Light,
+                color = Color.Gray,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
+    }
+
+
+}
+
+@Preview(showBackground = true)
+@Composable
+fun sobrePreview() {
+    ArtetocaTheme {
+        sobre()
+    }
+}
