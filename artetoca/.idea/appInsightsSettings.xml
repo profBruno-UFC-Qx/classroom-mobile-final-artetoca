@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.artetoca" />
+                  <option name="mobileSdkAppId" value="1:640811250767:android:b3e872726610e6157ae63a" />
+                  <option name="projectId" value="learnig-firebase-535ad" />
+                  <option name="projectNumber" value="640811250767" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
