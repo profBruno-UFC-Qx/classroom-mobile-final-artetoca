@@ -1,39 +1,39 @@
 package com.example.artetoca
 
-import androidx.compose.runtime.Composable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import com.example.artetoca.ui.theme.ArtetocaTheme
+import com.example.artetoca.ui.theme.Background
 
 @Composable
 fun sobre( modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.artetoca)
-    val Rosa = Color(0xFFFEF5F5)
-    val RosaTitulo = Color(0xFFE88BA0)
+    val BackgroundTitulo = Color(0xFFE88BA0)
 
     Column(
         modifier = modifier
@@ -61,7 +61,7 @@ fun sobre( modifier: Modifier = Modifier) {
                     text = "Artetoca",
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Light,
-                    color = RosaTitulo,
+                    color = BackgroundTitulo,
                     textAlign = TextAlign.Left,
                     modifier = Modifier.fillMaxWidth()
 
@@ -81,7 +81,7 @@ fun sobre( modifier: Modifier = Modifier) {
         //Spacer(modifier = Modifier.height(24.dp))
 
         Column(
-             modifier = Modifier.background(Rosa)
+             modifier = Modifier.background(Background)
                  .padding(horizontal = 24.dp, vertical = 24.dp)
         ){
             val image = painterResource(R.drawable.artetoca_grupo)
@@ -90,7 +90,7 @@ fun sobre( modifier: Modifier = Modifier) {
                 text = "Sobre a Artetoca",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Light,
-                color = RosaTitulo,
+                color = BackgroundTitulo,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
                                 .padding(horizontal = 12.dp)
@@ -113,7 +113,7 @@ fun sobre( modifier: Modifier = Modifier) {
                 text = "Nossa história",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Light,
-                color = RosaTitulo,
+                color = BackgroundTitulo,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -133,14 +133,14 @@ fun sobre( modifier: Modifier = Modifier) {
         }
 
         Column(
-             modifier = Modifier.background(Rosa)
+             modifier = Modifier.background(Background)
                 .padding(horizontal = 24.dp)
         ){
             Text(
                 text = "Nossos Valores",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Light,
-                color = RosaTitulo,
+                color = BackgroundTitulo,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
